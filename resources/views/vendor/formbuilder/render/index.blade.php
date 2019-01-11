@@ -18,7 +18,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary confirm-form" data-form="submitForm" data-message="Submit your entry for '{{ $form->name }}'?">
-                            <i class="fa fa-submit"></i> Submit Form
+                            <i class="fa fa-submit"></i> 提交
                         </button>
                     </div>
                 </form>

@@ -10,7 +10,7 @@
                         {{ $pageTitle ?? '' }}
 
                         <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-sm btn-primary float-md-right">
-                            <i class="fa fa-arrow-left"></i> Back To My Form
+                            <i class="fa fa-arrow-left"></i> 返回到我的表单
                         </a>
                     </h5>
                 </div>
@@ -22,9 +22,9 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label">Form Name</label>
+                                    <label for="name" class="col-form-label">表单名称</label>
 
-                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="Enter Form Name">
+                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="输入表单名称">
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -35,10 +35,10 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="visibility" class="col-form-label">Form Visibility</label>
+                                    <label for="visibility" class="col-form-label">表单可见性</label>
 
                                     <select name="visibility" id="visibility" class="form-control" required="required">
-                                        <option value="">Select Form Visibility</option>
+                                        <option value="">选择表单可见性</option>
                                         @foreach(jazmy\FormBuilder\Models\Form::$visibility_options as $option)
                                             <option value="{{ $option['id'] }}">{{ $option['name'] }}</option>
                                         @endforeach
@@ -54,12 +54,12 @@
                             <div class="col-md-4" style="display: none;" id="allows_edit_DIV">
                                 <div class="form-group">
                                     <label for="allows_edit" class="col-form-label">
-                                        Allow Submission Edit
+                                        提交后是否可再次编辑
                                     </label>
 
                                     <select name="allows_edit" id="allows_edit" class="form-control" required="required">
-                                        <option value="0">NO (submissions are final)</option>
-                                        <option value="1">YES (allow users to edit their submissions)</option>
+                                        <option value="0">不允许</option>
+                                        <option value="1">允许</option>
                                     </select>
 
                                     @if ($errors->has('allows_edit'))
@@ -75,7 +75,7 @@
                             <div class="col-12">
                                 <div class="alert alert-info" role="alert">
                                     <i class="fa fa-info-circle"></i> 
-                                    Click on or drag and drop components onto the main panel to build your form content.
+                                    请<b>点击</b>或<b>拖动</b>组件至主面板以编辑表单
                                 </div>
 
                                 <div id="fb-editor" class="fb-editor"></div>
@@ -86,10 +86,10 @@
 
                 <div class="card-footer" id="fb-editor-footer" style="display: none;">
                     <button type="button" class="btn btn-primary fb-clear-btn">
-                        <i class="fa fa-remove"></i> Clear Form 
+                        <i class="fa fa-remove"></i> 清空面板
                     </button> 
                     <button type="button" class="btn btn-primary fb-save-btn">
-                        <i class="fa fa-save"></i> Submit &amp; Save Form
+                        <i class="fa fa-save"></i> 提交并保存
                     </button>
                 </div>
             </div>

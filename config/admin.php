@@ -325,5 +325,10 @@ return [
             // Select a local disk that you configured in `config/filesystem.php`
             'disk' => 'public'
         ],
+        'china-distpicker' => [
+        
+            // 如果要关掉这个扩展，设置为false
+            'enable' => true,
+        ]
     ],
 ];

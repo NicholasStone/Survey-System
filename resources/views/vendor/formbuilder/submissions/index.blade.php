@@ -10,7 +10,7 @@
                         {{ $pageTitle }} ({{ $submissions->count() }})
                         
                         <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-primary float-md-right btn-sm">
-                            <i class="fa fa-arrow-left"></i> Back To Forms
+                            <i class="fa fa-arrow-left"></i> 返回表单
                         </a>
                     </h5>
                 </div>
@@ -21,11 +21,11 @@
                             <thead>
                                 <tr>
                                     <th class="five">#</th>
-                                    <th class="fifteen">User Name</th>
+                                    <th class="fifteen">用户名</th>
                                     @foreach($form_headers as $header)
                                         <th>{{ $header['label'] ?? title_case($header['name']) }}</th>
                                     @endforeach
-                                    <th class="fifteen">Actions</th>
+                                    <th class="fifteen">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,7 +69,7 @@
                 @else
                     <div class="card-body">
                         <h4 class="text-danger text-center">
-                            No submission to display.
+                            暂无提交数据
                         </h4>
                     </div>  
                 @endif

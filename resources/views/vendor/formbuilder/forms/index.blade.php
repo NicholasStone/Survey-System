@@ -12,11 +12,11 @@
                         <div class="btn-toolbar float-md-right" role="toolbar">
                             <div class="btn-group" role="group" aria-label="Third group">
                                 <a href="{{ route('formbuilder::forms.create') }}" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-plus-circle"></i> Create a New Form
+                                    <i class="fa fa-plus-circle"></i> 创建新的表单
                                 </a>
 
                                 <a href="{{ route('formbuilder::my-submissions.index') }}" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-th-list"></i> My Submissions
+                                    <i class="fa fa-th-list"></i> 我提交过的
                                 </a>
                             </div>
                         </div>
@@ -29,11 +29,11 @@
                             <thead>
                                 <tr>
                                     <th class="five">#</th>
-                                    <th>Name</th>
-                                    <th class="ten">Visibility</th>
-                                    <th class="fifteen">Allows Edit?</th>
-                                    <th class="ten">Submissions</th>
-                                    <th class="twenty-five">Actions</th>
+                                    <th>表单名称</th>
+                                    <th class="ten">可见性</th>
+                                    <th class="fifteen">是否编辑</th>
+                                    <th class="ten">提交的数据</th>
+                                    <th class="twenty-five">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,7 +80,7 @@
                 @else
                     <div class="card-body">
                         <h4 class="text-danger text-center">
-                            No form to display.
+                            暂无数据
                         </h4>
                     </div>  
                 @endif

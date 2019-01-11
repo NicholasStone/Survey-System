@@ -12,10 +12,10 @@
                         <div class="btn-toolbar float-md-right" role="toolbar">
                             <div class="btn-group" role="group">
                                 <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-sm btn-primary float-md-right">
-                                    <i class="fa fa-arrow-left"></i> Back To My Forms
+                                    <i class="fa fa-arrow-left"></i> 返回我的表单
                                 </a>
                                 <button class="btn btn-primary btn-sm clipboard" data-clipboard-text="{{ route('formbuilder::form.render', $form->identifier) }}" data-message="Link Copied" data-original="Copy Form Link" title="Copy form URL to clipboard">
-                                    <i class="fa fa-clipboard"></i> Copy Form Link
+                                    <i class="fa fa-clipboard"></i> 复制此表单的链接
                                 </button> 
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label">Form Name</label>
+                                    <label for="name" class="col-form-label">表单名称</label>
 
                                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') ?? $form->name }}" required autofocus placeholder="Enter Form Name">
 
@@ -43,10 +43,10 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="visibility" class="col-form-label">Form Visibility</label>
+                                    <label for="visibility" class="col-form-label">表单可见性</label>
 
                                     <select name="visibility" id="visibility" class="form-control" required="required">
-                                        <option value="">Select Form Visibility</option>
+                                        <option value="">选择可见性</option>
                                         @foreach(jazmy\FormBuilder\Models\Form::$visibility_options as $option)
                                             <option value="{{ $option['id'] }}" @if($form->visibility == $option['id']) selected @endif>
                                                 {{ $option['name'] }}
@@ -64,15 +64,15 @@
                             <div class="col-md-4" @if($form->isPublic()) style="display: none;" id="allows_edit_DIV" @endif>
                                 <div class="form-group">
                                     <label for="allows_edit" class="col-form-label">
-                                        Allow Submission Edit
+                                        提交后是否可再次编辑
                                     </label>
 
                                     <select name="allows_edit" id="allows_edit" class="form-control" required="required">
                                         <option value="0" @if($form->allows_edit == 0) selected @endif>
-                                            NO (submissions are final)
+                                            不允许
                                         </option>
                                         <option value="1" @if($form->allows_edit == 1) selected @endif>
-                                            YES (allow users to edit their submissions)
+                                            允许
                                         </option>
                                     </select>
 
@@ -88,8 +88,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="alert alert-info" role="alert">
-                                    <i class="fa fa-info-circle"></i> 
-                                    Click on or Drag and drop components onto the main panel to build your form content.
+                                    <i class="fa fa-info-circle"></i>
+                                    请<b>点击</b>或<b>拖动</b>组件至主面板以编辑表单
                                 </div>
 
                                 <div id="fb-editor" class="fb-editor"></div>
@@ -100,10 +100,10 @@
 
                 <div class="card-footer" id="fb-editor-footer" style="display: none;">
                     <button type="button" class="btn btn-primary fb-clear-btn">
-                        <i class="fa fa-remove"></i> Clear Form 
+                        <i class="fa fa-remove"></i> 清空面板
                     </button> 
                     <button type="button" class="btn btn-primary fb-save-btn">
-                        <i class="fa fa-save"></i> Submit &amp; Save Form
+                        <i class="fa fa-save"></i> 提交并保存
                     </button>
                 </div>
             </div>

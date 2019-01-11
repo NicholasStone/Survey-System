@@ -10,7 +10,7 @@
                         {{ $pageTitle }} ({{ $submissions->count() }})
 
                         <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-primary float-md-right btn-sm" title="Back To My Forms">
-                            <i class="fa fa-th-list"></i> My Forms
+                            <i class="fa fa-th-list"></i> 我的表单
                         </a>
                     </h5>
                 </div>
@@ -21,10 +21,10 @@
                             <thead>
                                 <tr>
                                     <th class="five">#</th>
-                                    <th class="">Form</th>
-                                    <th class="twenty-five">Updated On</th>
-                                    <th class="twenty-five">Created On</th>
-                                    <th class="fifteen">Actions</th>
+                                    <th class="">表单名称</th>
+                                    <th class="twenty-five">最后一次更改时间</th>
+                                    <th class="twenty-five">创建时间</th>
+                                    <th class="fifteen">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,7 +67,7 @@
                 @else
                     <div class="card-body">
                         <h4 class="text-danger text-center">
-                            No submission to display.
+                            没有提交可以显示
                         </h4>
                     </div>  
                 @endif

@@ -7,21 +7,21 @@
             <div class="card rounded-0">
                 <div class="card-header">
                     <h5 class="card-title">
-                        Form Preview for '{{ $form->name }}' 
+                        '{{ $form->name }}' 预览
 
                         <div class="btn-toolbar float-md-right" role="toolbar">
                             <div class="btn-group" role="group">
                                 <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-primary float-md-right btn-sm">
-                                    <i class="fa fa-arrow-left"></i> 
+                                    <i class="fa fa-arrow-left"></i>
                                 </a>
                                 <a href="{{ route('formbuilder::forms.submissions.index', $form) }}" class="btn btn-primary float-md-right btn-sm">
-                                    <i class="fa fa-th-list"></i> Submissions
+                                    <i class="fa fa-th-list"></i> 提交
                                 </a> 
                                 <a href="{{ route('formbuilder::forms.edit', $form) }}" class="btn btn-primary float-md-right btn-sm">
-                                    <i class="fa fa-edit"></i> Edit
+                                    <i class="fa fa-edit"></i> 编辑
                                 </a> 
                                 <a href="{{ route('formbuilder::forms.create') }}" class="btn btn-primary float-md-right btn-sm">
-                                    <i class="fa fa-plus-circle"></i> New Form
+                                    <i class="fa fa-plus-circle"></i> 创建新表单
                                 </a>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                         Details 
                         
                         <button class="btn btn-primary btn-sm clipboard float-right" data-clipboard-text="{{ route('formbuilder::form.render', $form->identifier) }}" data-message="Copied" data-original="Copy Form URL" title="Copy form URL to clipboard">
-                            <i class="fa fa-clipboard"></i> Copy Form URL
+                            <i class="fa fa-clipboard"></i> 复制链接
                         </button> 
                     </h5>
                 </div>

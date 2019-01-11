@@ -7,9 +7,9 @@
             <div class="card rounded-0">
                 <div class="card-header">
                     <h5 class="card-title">
-                        Viewing my submission for form 
+                        我的提交：
                         <strong>{{ $submission->form->name }}</strong>
-                        
+
                         <div class="btn-toolbar float-md-right" role="toolbar">
                             <div class="btn-group" role="group" aria-label="First group">
                                 <a href="{{ route('formbuilder::my-submissions.index') }}" class="btn btn-primary btn-sm" title="Back To My Submissions">
@@ -49,24 +49,24 @@
         <div class="col-md-4">
             <div class="card rounded-0">
                 <div class="card-header">
-                    <h5 class="card-title">Details</h5>
+                    <h5 class="card-title">其他细节</h5>
                 </div>
 
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <strong>Form: </strong> 
+                        <strong>表单 : </strong>
                         <span class="float-right">{{ $submission->form->name }}</span>
                     </li>
                     <li class="list-group-item">
-                        <strong>Submitted By: </strong> 
+                        <strong>提交人 : </strong>
                         <span class="float-right">{{ $submission->user->name ?? 'Guest' }}</span>
                     </li>
                     <li class="list-group-item">
-                        <strong>Last Updated On: </strong> 
+                        <strong>最后一次更改时间 : </strong>
                         <span class="float-right">{{ $submission->updated_at->toDayDateTimeString() }}</span>
                     </li>
                     <li class="list-group-item">
-                        <strong>Submitted On: </strong> 
+                        <strong>最后一次提交时间 : </strong>
                         <span class="float-right">{{ $submission->created_at->toDayDateTimeString() }}</span>
                     </li>
                 </ul>
