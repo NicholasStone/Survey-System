@@ -1054,16 +1054,16 @@
         },
         {
             "name": "james.xue/login-captcha",
-            "version": "1.4",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xiaoxuan6/login-captcha.git",
-                "reference": "9ee84762fceafcbd8fbe201d8517594b4e9a0763"
+                "reference": "177950835bd89988698828c8332f73a57ffec4a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xiaoxuan6/login-captcha/zipball/9ee84762fceafcbd8fbe201d8517594b4e9a0763",
-                "reference": "9ee84762fceafcbd8fbe201d8517594b4e9a0763",
+                "url": "https://api.github.com/repos/xiaoxuan6/login-captcha/zipball/177950835bd89988698828c8332f73a57ffec4a9",
+                "reference": "177950835bd89988698828c8332f73a57ffec4a9",
                 "shasum": ""
             },
             "require": {
@@ -1104,7 +1104,7 @@
                 "laravel-admin",
                 "login-captcha"
             ],
-            "time": "2019-01-24T09:24:48+00:00"
+            "time": "2019-01-24T12:05:48+00:00"
         },
         {
             "name": "jazmy/jaz-form-builder",
@@ -1112,12 +1112,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NicholasStone/laravelformbuilder.git",
-                "reference": "22583f37847a206a74280c72e5ad80d0fb858255"
+                "reference": "b34fad2c3e651fcf8df0ec95eca9778a4631dd41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NicholasStone/laravelformbuilder/zipball/22583f37847a206a74280c72e5ad80d0fb858255",
-                "reference": "22583f37847a206a74280c72e5ad80d0fb858255",
+                "url": "https://api.github.com/repos/NicholasStone/laravelformbuilder/zipball/b34fad2c3e651fcf8df0ec95eca9778a4631dd41",
+                "reference": "b34fad2c3e651fcf8df0ec95eca9778a4631dd41",
                 "shasum": ""
             },
             "type": "library",
@@ -1143,7 +1143,7 @@
             "support": {
                 "source": "https://github.com/NicholasStone/laravelformbuilder/tree/master"
             },
-            "time": "2019-01-24T09:09:07+00:00"
+            "time": "2019-01-24T12:24:59+00:00"
         },
         {
             "name": "jxlwqq/material-ui",

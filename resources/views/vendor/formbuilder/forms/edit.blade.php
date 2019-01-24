@@ -132,8 +132,9 @@
 <script type="text/javascript">
     window._form_builder_content = {!! json_encode($form->form_builder_json) !!};
     window.FormBuilder = window.FormBuilder || {};
+    window.FormBuilder.form_id = '{{ $form->id }}';
     window.FormBuilder.form_roles = @json($form_roles);
-    window.FormBuilder.forms_url = '{{ route("formbuilder::api.forms") }}'
+    window.FormBuilder.forms_url = '{{ route("formbuilder::api.forms") }}';
 </script>
 <script src="{{ asset('vendor/formbuilder/js/create-form.js') }}{{ jazmy\FormBuilder\Helper::bustCache() }}" defer></script>
 @endpush

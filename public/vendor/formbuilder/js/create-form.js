@@ -30,7 +30,6 @@ jQuery(function () {
                 return;
             }
             $.each(formData.find(col => col.id == formSelect.val()).form, function (key, val) {
-                // TODO 从候选列表中删去自己
                 columnSelect.append($('<option>', {value: val.name}).text(val.label));
             });
         };
@@ -74,7 +73,7 @@ jQuery(function () {
             'button', // buttons are not needed since we are the one handling the submission
         ],  // field types that should not be shown
         disabledAttrs: [
-            // 'access',
+            'access',
         ],
         typeUserDisabledAttrs: {
             'file': [
@@ -88,22 +87,20 @@ jQuery(function () {
         typeUserAttrs: {
             select: {
                 source: {
-                    label: '',
+                    label: '数据源',
                     options: {
-                        0: 'Custom',
-                        1: 'Associated'
+                        0: '自定义',
+                        1: '关联其他表单数据'
                     }
                 },
                 formAssoc: {
                     label: '表单',
-                    // options: [],
                     text: '',
-                    placeholder: '请选择表单',
+                    placeholder: '点击选择要关联的表单',
                     disabled: 'disabled'
                 },
                 column: {
                     label: '数据段',
-                    // options: [],
                     text: '',
                     placeholder: '请选择数据段',
                     disabled: 'disabled',
@@ -116,11 +113,18 @@ jQuery(function () {
                     const field = $(f);
                     const fieldId = field.attr('id');
                     const fieldOptionsGroup = $(field.find('.field-options')[0]);
+                    const SourceSelectGroup = $(field.find('.source-wrap')[0]);
                     const sourceSelect = $(field.find(`#source-${fieldId}`));
                     const formInputGroup = $(field.find('.formAssoc-wrap')[0]);
                     const formInput = $(formInputGroup.find(`#formAssoc-${fieldId}`));
                     const columnInputGroup = $(field.find('.column-wrap')[0]);
                     const columnInput = $(columnInputGroup.find(`#column-${fieldId}`));
+
+                    // 没有可以使用的表单数据
+                    if (!window.formData.length) {
+                        // swal('无法使用关联','您没有可以关联的表单','warning');
+                        SourceSelectGroup.hide();
+                    }
 
                     if (sourceSelect.val() == 1) {
                         // 数据来源->server
@@ -129,14 +133,14 @@ jQuery(function () {
                         columnInputGroup.show();
                     } else {
                         // 数据来源->custom
-                        // fieldOptionsGroup.show();
+                        fieldOptionsGroup.show();
                         formInputGroup.hide();
                         columnInputGroup.hide();
                     }
 
                     // 数据来源更改
                     sourceSelect.change(function () {
-                        if (sourceSelect.val()) {
+                        if (sourceSelect.val() === '1') {
                             fieldOptionsGroup.hide();
                             formInputGroup.show();
                             columnInputGroup.show();
@@ -165,13 +169,13 @@ jQuery(function () {
         },
         notify: {
             error: function (message) {
-                return swal('Error', message, 'error')
+                return swal('发生错误', message, 'error')
             },
             success: function (message) {
-                return swal('Success', message, 'success')
+                return swal('成功', message, 'success')
             },
             warning: function (message) {
-                return swal('Warning', message, 'warning');
+                return swal('警告', message, 'warning');
             }
         },
         // onSave: function () {
@@ -183,10 +187,16 @@ jQuery(function () {
         dataType: 'json',
         success: function (data) {
             // init assoc select modal
+            if (window.FormBuilder.form_id) {
+                // 去掉本表单
+                const self_index = data.findIndex(x => x.id == window.FormBuilder.form_id);
+                if (self_index > -1)
+                    data.splice(self_index, 1);
+            }
             window.formData = data;
             const formSelect = $('#modal-assoc-form');
-
             formSelect.append($('<option>', {disable: 'disable', selected: 'selected', value: 0}).text('请选择数据源表单'));
+
             $.each(data, function (key, val) {
                 formSelect.append($('<option>', {value: val.id}).text(val.name));
             });
@@ -205,7 +215,7 @@ jQuery(function () {
 
         if (!formBuilder.actions.getData().length) return;
 
-        sConfirm("Are you sure you want to clear all fields from the form?", function () {
+        sConfirm("您确定清空所有已选择的数据段吗 ? ", function () {
             formBuilder.actions.clearFields()
         })
     });
@@ -226,15 +236,15 @@ jQuery(function () {
         // make sure the form builder is not empty
         if (!formBuilder.actions.getData().length) {
             swal({
-                title: "Error",
-                text: "The form builder cannot be empty",
+                title: "错误",
+                text: "表单不能为空",
                 icon: 'error',
             });
             return
         }
 
         // ask for confirmation
-        sConfirm("Save this form definition?", function () {
+        sConfirm("是否保存表单 ?", function () {
             fbSaveBtn.attr('disabled', 'disabled');
             fbClearBtn.attr('disabled', 'disabled');
 
@@ -268,7 +278,7 @@ jQuery(function () {
                         // the form has been created
                         // send the user to the form index page
                         swal({
-                            title: "Form Saved!",
+                            title: "表单保存成功!",
                             text: response.details || '',
                             icon: 'success',
                         });
