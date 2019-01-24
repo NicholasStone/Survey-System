@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f72ad8a0513b71300c62a9f9e7214897",
+    "content-hash": "bd0f343642900d88870fb2d4a6dad798",
     "packages": [
         {
             "name": "caouecs/laravel-lang",
@@ -1054,16 +1054,16 @@
         },
         {
             "name": "james.xue/login-captcha",
-            "version": "1.1",
+            "version": "1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xiaoxuan6/login-captcha.git",
-                "reference": "b5eafcc7513cffc73f06ca41a5c4c39a41b0c5ad"
+                "reference": "9ee84762fceafcbd8fbe201d8517594b4e9a0763"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xiaoxuan6/login-captcha/zipball/b5eafcc7513cffc73f06ca41a5c4c39a41b0c5ad",
-                "reference": "b5eafcc7513cffc73f06ca41a5c4c39a41b0c5ad",
+                "url": "https://api.github.com/repos/xiaoxuan6/login-captcha/zipball/9ee84762fceafcbd8fbe201d8517594b4e9a0763",
+                "reference": "9ee84762fceafcbd8fbe201d8517594b4e9a0763",
                 "shasum": ""
             },
             "require": {
@@ -1104,20 +1104,20 @@
                 "laravel-admin",
                 "login-captcha"
             ],
-            "time": "2019-01-02T07:04:31+00:00"
+            "time": "2019-01-24T09:24:48+00:00"
         },
         {
             "name": "jazmy/jaz-form-builder",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jazmy/laravelformbuilder.git",
-                "reference": "c55f78d8363716df473e77cb6e8f668d26170995"
+                "url": "https://github.com/NicholasStone/laravelformbuilder.git",
+                "reference": "22583f37847a206a74280c72e5ad80d0fb858255"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jazmy/laravelformbuilder/zipball/c55f78d8363716df473e77cb6e8f668d26170995",
-                "reference": "c55f78d8363716df473e77cb6e8f668d26170995",
+                "url": "https://api.github.com/repos/NicholasStone/laravelformbuilder/zipball/22583f37847a206a74280c72e5ad80d0fb858255",
+                "reference": "22583f37847a206a74280c72e5ad80d0fb858255",
                 "shasum": ""
             },
             "type": "library",
@@ -1141,10 +1141,9 @@
             ],
             "description": "A Laravel form builder package",
             "support": {
-                "source": "https://github.com/jazmy/laravelformbuilder/tree/master",
-                "issues": "https://github.com/jazmy/laravelformbuilder/issues"
+                "source": "https://github.com/NicholasStone/laravelformbuilder/tree/master"
             },
-            "time": "2018-12-30T04:42:03+00:00"
+            "time": "2019-01-24T09:09:07+00:00"
         },
         {
             "name": "jxlwqq/material-ui",
