@@ -9,7 +9,7 @@
                     <h5 class="card-title">
                         {{ $pageTitle }}
 
-                        <a href="{{ route('formbuilder::my-submissions.index') }}" class="btn btn-primary float-md-right btn-sm" title="Back To My Submissions">
+                        <a href="{{ route('formbuilder::my-submissions.index') }}" class="btn btn-primary float-md-right btn-sm" title="{{ __('formbuilder.form.submissions.back-to-my-submission') }}">
                             <i class="fa fa-arrow-left"></i> 
                         </a>
                     </h5>
@@ -24,8 +24,8 @@
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary confirm-form" data-form="submitForm" data-message="Submit update to your entry for '{{ $submission->form->name }}'?">
-                            <i class="fa fa-submit"></i> 提交表单
+                        <button type="submit" class="btn btn-primary confirm-form" data-form="submitForm" data-message="{{ __('formbuilder.form.submissions.submit-update', ['form'=> $submission->form->name]) }} ?">
+                            <i class="fa fa-submit"></i> {{ __('formbuilder.common.submit') }}
                         </button>
                     </div>
                 </form>

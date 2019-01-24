@@ -9,8 +9,8 @@
                     <h5 class="card-title">
                         {{ $pageTitle }} ({{ $submissions->count() }})
 
-                        <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-primary float-md-right btn-sm" title="Back To My Forms">
-                            <i class="fa fa-th-list"></i> 我的表单
+                        <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-primary float-md-right btn-sm" title="{{ __('formbuilder.title.back-to-my-form') }}">
+                            <i class="fa fa-th-list"></i> {{ __('formbuilder.title.my-form') }}
                         </a>
                     </h5>
                 </div>
@@ -21,10 +21,10 @@
                             <thead>
                                 <tr>
                                     <th class="five">#</th>
-                                    <th class="">表单名称</th>
-                                    <th class="twenty-five">最后一次更改时间</th>
-                                    <th class="twenty-five">创建时间</th>
-                                    <th class="fifteen">操作</th>
+                                    <th class="">{{ __('formbuilder.form.form-name') }}</th>
+                                    <th class="twenty-five">{{ __('formbuilder.form.show.last-updated-on') }}</th>
+                                    <th class="twenty-five">{{ __('formbuilder.form.show.created-on') }}</th>
+                                    <th class="fifteen">{{ __('formbuilder.form.index.actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,12 +35,12 @@
                                         <td>{{ $submission->updated_at->toDayDateTimeString() }}</td>
                                         <td>{{ $submission->created_at->toDayDateTimeString() }}</td>
                                         <td>
-                                            <a href="{{ route('formbuilder::my-submissions.show', [$submission->id]) }}" class="btn btn-primary btn-sm" title="View submission">
+                                            <a href="{{ route('formbuilder::my-submissions.show', [$submission->id]) }}" class="btn btn-primary btn-sm" title="{{ __('formbuilder.form.submissions.view-submission') }}">
                                                 <i class="fa fa-eye"></i> View
                                             </a> 
 
                                             @if($submission->form->allowsEdit())
-                                                <a href="{{ route('formbuilder::my-submissions.edit', [$submission->id]) }}" class="btn btn-primary btn-sm" title="Edit submission">
+                                                <a href="{{ route('formbuilder::my-submissions.edit', [$submission->id]) }}" class="btn btn-primary btn-sm" title="{{ __('formbuilder.form.submissions.edit-submission') }}">
                                                     <i class="fa fa-pencil"></i> 
                                                 </a> 
                                             @endif
@@ -67,7 +67,7 @@
                 @else
                     <div class="card-body">
                         <h4 class="text-danger text-center">
-                            没有提交可以显示
+                            {{ __("formbuilder.form.index.no-data-to-display") }}
                         </h4>
                     </div>  
                 @endif

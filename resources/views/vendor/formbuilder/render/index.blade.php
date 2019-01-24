@@ -17,8 +17,8 @@
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary confirm-form" data-form="submitForm" data-message="Submit your entry for '{{ $form->name }}'?">
-                            <i class="fa fa-submit"></i> 提交
+                        <button type="submit" class="btn btn-primary confirm-form" data-form="submitForm" data-message="{{ __('formbuilder.form.submissions.submit') }}?">
+                            <i class="fa fa-submit"></i> {{ __('formbuilder.common.submit') }}
                         </button>
                     </div>
                 </form>
