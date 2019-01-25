@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProviderColumnToUser extends Migration
+class AddThirdPartyLoginToUser extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddProviderColumnToUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->string('providers');
+            $table->json('provided_info');
         });
     }
 
@@ -26,7 +27,7 @@ class AddProviderColumnToUser extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn(['providers','provided_info']);
         });
     }
 }

@@ -19,7 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::name('third-party.')->namespace('Auth/ThirdParty')->group(function () {
+Route::name('third-party:')
+    ->namespace('Auth\ThirdParty')
+    ->prefix('/oauth')
+    ->group(function () {
     Route::get('/wechat', 'WeChatController@wechat')->name('wechat');
-    Route::get('/wechat/callback', 'WeChatController@wechalogin')->name('wechat.callback');
+    Route::get('/wechat/callback', 'WeChatController@callback')->name('wechat.callback');
 });
